@@ -1,0 +1,30 @@
+Query 1
+Album.where(artist_id: Artist.where(name: 'Queen'))
+
+Query 2
+MediaType.all
+Track.where(media_type_id: 3).count
+
+Query 3
+Genre.where(name: "Hip Hop/Rap")
+
+Query 4
+Track.where(genre_id: 17).count
+
+Query 5
+Track.sum("milliseconds")
+
+Query 6
+Track.where(media_type_id: 1).minimum(:unit_price)
+
+Query 7
+Track.where(media_type_id: 1).maximum(:unit_price)
+
+Query 8
+Artist.order(created_at: :asc).limit(2)
+
+Query 9
+Track.where(genre_id: 15).order(unit_price: :asc).limit(1)
+
+Query 10
+Track.where(genre_id: 15).where(media_type_id: 1)
